@@ -1,0 +1,12 @@
+CREATE TABLE categoria (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nombre VARCHAR2(100) NOT NULL
+);
+
+CREATE TABLE producto (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nombre VARCHAR2(100) NOT NULL,
+    precio NUMBER(10,2),
+    categoria_id NUMBER,
+    CONSTRAINT fk_categoria FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+);

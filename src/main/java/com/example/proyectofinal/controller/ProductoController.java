@@ -1,5 +1,4 @@
 package com.example.proyectofinal.controller;
-import com.example.proyectofinal.serviceImpl.ProductoServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,16 +15,13 @@ import com.example.proyectofinal.service.ProductoService;
 @Controller
 @RequestMapping("/productos")
 public class ProductoController {
-
-    private final ProductoServiceImpl productoServiceImpl;
 	
 	private final ProductoService productoService;
 	private final CategoriaService categoriaService;
 	
-    public ProductoController(ProductoService productoService, CategoriaService categoriaService, ProductoServiceImpl productoServiceImpl) {
+    public ProductoController(ProductoService productoService, CategoriaService categoriaService) {
         this.productoService = productoService;
         this.categoriaService = categoriaService;
-        this.productoServiceImpl = productoServiceImpl;
     }
     
     @GetMapping

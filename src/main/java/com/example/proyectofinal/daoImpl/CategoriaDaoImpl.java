@@ -24,7 +24,7 @@ public class CategoriaDaoImpl implements CategoriaDao{
 	@Override
 	public int create(Categoria t) {
 		// TODO Auto-generated method stub
-		return jdbc.update("INSERT INTO categoria(nombre) VALUES(?)", t.getNombre());
+		return jdbc.update("INSERT INTO categoria(nombre) VALUES(?)", t.getNombre());//new Object{}
 	}
 
 	@Override
